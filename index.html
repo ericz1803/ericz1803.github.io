@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Boogaloo">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Coda+Caption:800">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+<meta name="referrer" content="origin">
 </head>
 
 <body>
@@ -53,15 +54,44 @@
             </div>
         </div>
     </div>
-    <div class="contact-clean" style="background-color: rgb(40,45,50);">
-        <form style="background-color: rgb(50,55,60);" action="http://formspree.io/ericz1803@gmail.com" method="post">
-            <h2 class="text-center" style="color: rgb(205,205,205);">Contact Me</h2>
-            <div class="form-group"><input class="form-control" type="text" name="name" placeholder="Name"></div>
-            <div class="form-group"><input class="form-control" type="email" name="_replyto" placeholder="Email"><small class="form-text text-danger">Please enter a correct email address.</small></div>
-            <div class="form-group"><textarea class="form-control" name="name" placeholder="Message" rows="14"></textarea></div>
-            <div class="form-group"><button class="btn btn-primary" type="submit">send </button></div>
-        </form>
+    <div class="contact-clean" style="background-color: rgb(40,45,50);"><form class="needs-validation" display="none" visibility="hidden" style="background-color: rgb(50,55,60);" action="https://formspree.io/ericz1803@gmail.com" novalidate>
+    <h2 class="text-center" style="color: rgb(205,205,205);">Contact Me</h2>
+    <div class="form-group">
+        <input type="text" class="form-control" name="name" placeholder="Name" required>
+        <small class="invalid-feedback">Please enter your name.</small>
     </div>
+    <div class="form-group">
+        <input type="email" class="form-control" name="_replyto" placeholder="Email" required>
+        <small class="invalid-feedback">Please enter an email address.</small>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" name="message" placeholder="Message" rows="14" required></textarea>
+        <small class="invalid-feedback">Please enter a message.</small>
+    </div>
+    <div class="form-group"><button class="btn btn-primary" type="submit">send </button></div>
+</form>
+
+
+<script>
+// Example starter JavaScript for disabling form submissions if there are invalid fields
+(function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    var forms = document.getElementsByClassName('needs-validation');
+    // Loop over them and prevent submission
+    var validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  }, false);
+})();
+</script></div>
     <div class="footer-dark" style="height: 100px;">
         <footer>
             <div class="container">
